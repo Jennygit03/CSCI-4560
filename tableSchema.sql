@@ -7,7 +7,7 @@ CREATE TABLE Users (
     date_joined TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Categories Table (for expense categorization)
+-- Categories Table
 CREATE TABLE Categories (
     category_id INT PRIMARY KEY,
     category_name VARCHAR(20) NOT NULL
@@ -15,35 +15,22 @@ CREATE TABLE Categories (
 
 -- Transactions Table (for tracking expenses)
 CREATE TABLE Transactions (
-    transaction_id INT PRIMARY KEY,
     user_id INT,
-    category_id INT,
+    transaction_id INT PRIMARY KEY,
     amount DECIMAL(10, 2) NOT NULL,
+    category_id INT,
     date DATE NOT NULL
 );
 
--- Savings Goals Table (with total contributions stored in the same table)
+-- Savings Goals Table
 CREATE TABLE Savings_Goals (
-    goal_id INT AUTO_INCREMENT PRIMARY KEY,
+    goal_id INT PRIMARY KEY,
     user_id INT,
     goal_name VARCHAR(30) NOT NULL,
     target_amount DECIMAL(10, 2) NOT NULL,
-    current_amount DECIMAL(10, 2) DEFAULT 0.00,
-    total_contributions DECIMAL(10, 2) DEFAULT 0.00,  -- Tracks total contributions
-    due_date DATE,
+    current_amount DECIMAL(10, 2),
     category_id INT,
+    income INT,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
-);
-
--- Bills Table (for bill reminders and payment scheduling)
-CREATE TABLE Bills (
-    bill_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    bill_name VARCHAR(30) NOT NULL,
-    amount_due DECIMAL(10, 2) NOT NULL,
-    due_date DATE NOT NULL,
-    payment_date DATE,
-    paid_status BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
