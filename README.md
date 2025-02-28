@@ -28,6 +28,13 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 - Cash Flow Data: Generates visual reports comparing income and expenses
 
 
+## Challenges Encountered & Viable Solutions
+- Challenge: Finding relevant datasets
+   - Solution: Using Mockaroo for data generation
+- Challenge: Cleaning and validating large datasets
+   - Solution: Implementing data cleaning scripts
+
+
 ## Schema Structure
 ```plaintext
 Personal Budget App
