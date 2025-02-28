@@ -1,4 +1,4 @@
--- Users Table: stores personal information
+-- Users Table: stores personal infomation
 CREATE TABLE Users(
     user_id INT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -6,6 +6,7 @@ CREATE TABLE Users(
     password VARCHAR(50) NOT NULL,
     date_joined TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 -- Income Table: track income source for financial analysis
 CREATE TABLE Income(
     income_id INT PRIMARY KEY,
@@ -24,7 +25,7 @@ CREATE TABLE Categories(
 -- Savings Goals Table: tracks user's saving goals
 CREATE TABLE Savings_goals (
     goal_id INT PRIMARY KEY,
-    user_id INT,
+    user_id INT NOT NULL,
     goal_name VARCHAR(50) NOT NULL,
     target_amount DECIMAL(10, 2) NOT NULL,
     current_amount DECIMAL(10, 2) DEFAULT 0,
@@ -39,7 +40,8 @@ CREATE TABLE Transactions(
     transaction_id INT PRIMARY KEY,
     transaction_amount DECIMAL(10, 2) NOT NULL,
     category_id INT,
-    date DATE NOT NULL,
+    transaction_date DATE NOT NULL,
+    transaction_location VARCHAR(50),
 	FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
@@ -48,7 +50,7 @@ CREATE TABLE Transactions(
 CREATE TABLE Bills(
     bill_id INT PRIMARY KEY,
     user_id INT,
-    bill_name VARCHAR(50) NOT NULL,
+    bill_name VARCHAR(30) NOT NULL,
     bill_amount DECIMAL(10, 2) NOT NULL,
     due_date DATE NOT NULL,
     payment_date DATE,
@@ -56,7 +58,7 @@ CREATE TABLE Bills(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
--- Bill Reminders Table: reminds users about their bill payments
+-- Bill Reminders Table: reminds user about their bill payments
 CREATE TABLE bill_reminders(
     reminder_id INT PRIMARY KEY,
     bill_id INT,
