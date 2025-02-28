@@ -30,7 +30,6 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 
 ## Structure
 ```plaintext
-
 Schema
 ├── Users
 |   ├── user_id
