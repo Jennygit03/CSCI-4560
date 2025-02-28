@@ -28,9 +28,9 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 - Cash Flow Data: Generates visual reports comparing income and expenses
 
 
-## Structure
+## Schema Structure
 ```plaintext
-Schema
+Personal Budget App
 ├── Users
 |   ├── user_id
 |   ├── email
@@ -74,7 +74,6 @@ Schema
 |
 └── README.md
 ```
-
 
 
 ## Authors
