@@ -11,11 +11,11 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 
 **Backend:** Java
 
-**Frontend:** HTML, React.js, Vue.js
+**Frontend:** HTML/CSS, React.js, Vue.js
 
 **Deployment:** Docker
 
-**ERD Modeling:** ERDPlus
+**ERD Modeling:** Lucidchart
 
 
 
