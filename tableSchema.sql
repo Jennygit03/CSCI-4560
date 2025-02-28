@@ -58,8 +58,8 @@ CREATE TABLE Bills(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
--- Bill Reminders Table: reminds user about their bill payments
-CREATE TABLE bill_reminders(
+-- Bill Reminders Table: reminds users about their bill payments
+CREATE TABLE Bill_reminders(
     reminder_id INT PRIMARY KEY,
     bill_id INT,
     reminder_date DATE NOT NULL,
