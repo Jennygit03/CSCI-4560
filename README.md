@@ -44,7 +44,13 @@ Personal Budget App
 |   ├── username
 |   ├── password
 |   ├── data_joined                 
-│   
+|
+├── Income
+|   ├── income_id
+|   ├── user_id
+|   ├── income_source
+|   ├── income_amount
+|   
 ├── Categories
 |   ├── categories_id
 |   ├── categories_name
