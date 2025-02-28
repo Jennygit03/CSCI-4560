@@ -48,7 +48,7 @@ CREATE TABLE Transactions(
 CREATE TABLE Bills(
     bill_id INT PRIMARY KEY,
     user_id INT,
-    bill_name VARCHAR(30) NOT NULL,
+    bill_name VARCHAR(50) NOT NULL,
     bill_amount DECIMAL(10, 2) NOT NULL,
     due_date DATE NOT NULL,
     payment_date DATE,
@@ -56,7 +56,7 @@ CREATE TABLE Bills(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
--- Bill Reminders Table: reminds user about their bill payments
+-- Bill Reminders Table: reminds users about their bill payments
 CREATE TABLE bill_reminders(
     reminder_id INT PRIMARY KEY,
     bill_id INT,
