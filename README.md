@@ -28,6 +28,56 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 - Cash Flow Data: Generates visual reports comparing income and expenses
 
 
+## Structure
+```plaintext
+
+Schema
+├── Users
+|   ├── user_id
+|   ├── email
+|   ├── username
+|   ├── password
+|   ├── data_joined                 
+│   
+├── Categories
+|   ├── categories_id
+|   ├── categories_name
+|
+├── Savings Goals
+|   ├── user_id
+|   ├── goals_id
+|   ├── categories_id
+|   ├── goal_name
+|   ├── target_amount
+|   ├── current_amount
+|
+├── Transactions
+|   ├── user_id
+|   ├── categories_id
+|   ├── transaction_id
+|   ├── transaction_date
+|   ├── amount
+|   ├── location
+|
+├── Bills
+|   ├── bill_id
+|   ├── user_id
+|   ├── bill_name
+|   ├── bill_amount
+|   ├── due_date
+|   ├── payment_date
+|   ├── paid_status
+|
+├── Bill_Reminder
+|   ├── bill_id
+|   ├── reminder_id
+|   ├── reminder_date
+|
+└── README.md
+```
+
+
+
 ## Authors
 
 - [Jennifer Nyguen](https://github.com/Jennygit03)
