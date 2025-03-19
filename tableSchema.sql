@@ -1,8 +1,9 @@
+
 -- Users Table: stores personal infomation
 CREATE TABLE Users(
     user_id INT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL UNIQUE,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
     date_joined TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -16,11 +17,12 @@ CREATE TABLE Income(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
--- Categories Table: defines expense and saving categories
+-- Categories Table: group categories in to food, electric, transportation etc
 CREATE TABLE Categories(
     category_id INT PRIMARY KEY,
     category_name VARCHAR(50) NOT NULL
 );
+
 
 -- Savings Goals Table: tracks user's saving goals
 CREATE TABLE Savings_goals (
@@ -58,11 +60,15 @@ CREATE TABLE Bills(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
--- Bill Reminders Table: reminds users about their bill payments
-CREATE TABLE Bill_reminders(
-    reminder_id INT PRIMARY KEY,
-    bill_id INT,
-    reminder_date DATE NOT NULL,
-    FOREIGN KEY (bill_id) REFERENCES Bills(bill_id)
+ -- Report table: to generate a monthly report to let users know about 
+ -- their purchases and whether they're over or under budget
+CREATE TABLE Report(
+    report_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    report_month DATE NOT NULL,
+    total_income DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    total_expenses DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    budget_status ENUM('under budget', 'on budget', 'over budget') NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
