@@ -80,7 +80,7 @@ Personal Budget App
 |   ├── payment_date
 |   ├── paid_status
 |
-├── Bill_Reminder
+├── Report
 |   ├── report_id
 |   ├── user_id
 |   ├── report_month
