@@ -81,9 +81,12 @@ Personal Budget App
 |   ├── paid_status
 |
 ├── Bill_Reminder
-|   ├── bill_id
-|   ├── reminder_id
-|   ├── reminder_date
+|   ├── report_id
+|   ├── user_id
+|   ├── report_month
+|   ├── total_income
+|   ├── total_expenses
+|   ├── budget_status
 |
 └── README.md
 ```
