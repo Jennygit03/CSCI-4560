@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $user['username'];
 
         //Redirect to home page
-        header("Location: ../frontend/home.html");
+        header("Location: http://localhost/4560-Final_Proj/frontend/home.html");
         exit;
     } else {
         die("Invalid email or password.");
