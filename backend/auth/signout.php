@@ -7,5 +7,5 @@ if (ini_get("session.use_cookies")) {
     setcookie(session_name(), '', time() - 42000, '/');
 }
 
-header("Location: ../frontend/login.html");
+header("Location: ../../frontend/signin.html?logged_out=1");
 exit;
