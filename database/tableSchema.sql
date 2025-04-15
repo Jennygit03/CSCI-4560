@@ -34,7 +34,7 @@ CREATE TABLE SavingGoals (
 
 -- Transactions Table: tracks user's spending activity
 CREATE TABLE Transactions (
-    transaction_id INT PRIMARY KEY auto_increment,
+    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     transaction_amount DECIMAL(10, 2) NOT NULL,
     category_id INT,
