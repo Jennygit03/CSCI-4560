@@ -38,7 +38,7 @@ Our Personal Budget System is a digital tool made to help users efficiently trac
 ## Schema Structure
 ```plaintext
 Personal Budget App
-├── Users
+├── users
 |   ├── user_id
 |   ├── email
 |   ├── username
