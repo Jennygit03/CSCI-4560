@@ -63,7 +63,7 @@ CREATE TABLE Report (
     report_month CHAR(100) NOT NULL,
     total_income DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     total_transactions DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    budget_status ENUM('under budget', 'on budget', 'over budget') NOT NULL,
+    budget_status ENUM('Under budget', 'On budget', 'Over budget') NOT NULL,
     UNIQUE(user_id, report_month),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
