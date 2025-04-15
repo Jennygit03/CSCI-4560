@@ -57,7 +57,7 @@ Personal Budget App
 |
 ├── Savings Goals
 |   ├── user_id
-|   ├── goals_id
+|   ├── goal_id
 |   ├── categories_id
 |   ├── goal_name
 |   ├── target_amount
@@ -67,9 +67,9 @@ Personal Budget App
 |   ├── user_id
 |   ├── categories_id
 |   ├── transaction_id
+|   ├── transaction_amount
 |   ├── transaction_date
-|   ├── amount
-|   ├── location
+|   ├── transaction_location
 |
 ├── Bills
 |   ├── bill_id
@@ -78,14 +78,14 @@ Personal Budget App
 |   ├── bill_amount
 |   ├── due_date
 |   ├── payment_date
-|   ├── paid_status
+|   ├── payment_status
 |
 ├── Report
 |   ├── report_id
 |   ├── user_id
 |   ├── report_month
 |   ├── total_income
-|   ├── total_expenses
+|   ├── total_transactions
 |   ├── budget_status
 |
 └── README.md
